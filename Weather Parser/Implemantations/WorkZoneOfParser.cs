@@ -1,8 +1,6 @@
 ﻿using AngleSharp;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NLog.Fluent;
-using System.Globalization;
 using Weather_Parser.Interfaces;
 using Weather_Parser.Models;
 
