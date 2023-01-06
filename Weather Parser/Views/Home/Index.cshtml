@@ -1,0 +1,35 @@
+﻿@model Weather_Parser.Models.WeatherModel
+@{
+
+}
+
+<section class="vh-100">
+    <div class="container py-5 h-100">
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+                <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+                <div class="input-group rounded mb-3">
+                    <form class="d-flex" asp-action="Search" asp-controller="Home" role="search">
+                        <input class="form-control me-2" type="search" placeholder="City" aria-label="Search" name="city"/>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                @if (Model != null)
+                {
+
+
+                    <div class="card-body p-4">
+                        <h4 class="mb-1 sfw-normal">@Model.Coordinates.City, @Model.Coordinates.Country, Lat: @Model.Coordinates.Lat, Lon: @Model.Coordinates.Lon</h4>
+                        <p class="mb-2">Current temperature: <strong>@Model.Main.Degreeth °C</strong></p>
+                        <p>Feels like: <strong>@Model.Main.FeelsLikeDegreeth °C</strong></p>
+                        <p>Max: <strong>@Model.Main.MaxDegreeth °C</strong>, Min: <strong>@Model.Main.MinDegreeth °C</strong></p>
+                        <p>Wind speed: <strong>@Model.Wind.Speed</strong></p>
+                    </div>
+                }
+            </div>
+
+          </div>
+        </div>
+    </div>
+</section>
